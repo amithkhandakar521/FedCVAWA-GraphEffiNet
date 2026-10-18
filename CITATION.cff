@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "FedCVAWA and GraphEffiNet"
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: Khandakar
+    given-names: Amith
+    affiliation: Qatar University
+    email: amitk@qu.edu.qa
+preferred-citation:
+  type: article
+  title: "Embedded Federated Learning for Privacy-Aware Road Condition Monitoring with Graph-Augmented Vision on Vehicular Hardware"
+  year: 2026
+  notes: "Under review"
+  authors:
+    - family-names: Khandakar
+      given-names: Amith
+    - family-names: Michelson
+      given-names: David G.
+    - family-names: Mia
+      given-names: Md. Masum
+    - family-names: Saikot
+      given-names: Ishtiaque Ahmed
+    - family-names: Shafi
+      given-names: Fariya Bintay
+    - family-names: Khan
+      given-names: Khaled
+    - family-names: Ayari
+      given-names: Mohamed Arselene

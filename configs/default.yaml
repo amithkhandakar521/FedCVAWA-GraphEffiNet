@@ -1,0 +1,36 @@
+
+
+model:
+  num_classes: 3            # normal, bump, pothole
+  image_size: 224
+  patch_size: 56            # 4 x 4 grid, N = 16 graph nodes
+  gcn_dim: 256
+  gcn_layers: 3
+  swin_blocks: 2
+  num_heads: 8
+  window_size: 2
+  attention_position: 4     # after MBConv-4 (torchvision features[4], 80 channels)
+  fusion_dim: 512
+  head_hidden: 512
+  dropout: 0.3
+  use_graph_branch: true
+  pretrained: true          # ImageNet EfficientNet-B0 weights
+
+fedcvawa:
+  tau_conv: 0.7             # convergence threshold
+  alpha: 0.5                # gradient stability vs validation accuracy
+  tau_max: 1.0
+  tau_min: 0.1
+  total_rounds: 100         # T, also sets the temperature schedule
+
+local:
+  local_epochs: 100         # E
+  lr_max: 1.0e-4            # not reported in the paper
+  lr_min: 1.0e-6            # not reported in the paper
+  weight_decay: 1.0e-4      # not reported in the paper
+  sparsity_ratio: 0.20      # top-K = 20% of |theta|
+  amp: true
+  label_smoothing: 0.0
+
+# Other paper settings: K = 5 to 30 clients, batch size 32,
+# 70/15/15 session-level train/val/test split.
